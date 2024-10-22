@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  /* Background image properties */
+  background-color: #495529; /* Fallback color */
+  background-image: url('/css-envelope-animation/src/img/rosa.gif'); /* Ensure this path is correct */
+  background-size: cover;  /* Ensures the image covers the entire screen */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+  /* Styling the h1 heading */
+  h1 {
+    margin-top: -600px; /* Moves the h1 down by 50px */
+    margin-left: 20px; /* Moves the h1 20px to the right */
+    position: fixed;
+    display: bottom;
+    justify-content: bottom;
+    align-items: bottom center;
+    font-family: 'Arial', sans-serif; /* Font style */
+    font-size: 45px;                  /* Font size */
+    color: #333;                      /* Text color */
+    letter-spacing: 2px;              /* Add space between letters */
+    text-align: center;               /* Center the text */
+    text-transform: uppercase;        /* Make the text all uppercase */
+    background-color: #f0f0f0;        /* Background color behind the text */
+    padding: 10px;                    /* Add space around the text */
+    border-radius: 10px;              /* Round the corners of the background */
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+}
+
+  /* Adding hover effect */
+  h1:hover {
+    color: #8908d4;                   /* Change text color on hover */
+    background-color: #e0e0e0;        /* Change background color on hover */
+    transform: scale(1.05);           /* Slightly enlarge the text on hover */
+    transition: all 0.3s ease;        /* Smooth transition */
+}
+
+.wrapper {
+  height: 200px;
+  width: 300px;
+  background-color: #3760C9;
+  position: absolute; /* Changed from fixed to absolute */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; /* Centers it horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+}
+
+
+.lid {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-right: 150px solid transparent;
+  border-bottom: 100px solid transparent;
+  border-left: 150px solid transparent;
+  transform-origin: top;
+  transition: transform 0.25s linear;
+}
+
+/* Lid when closed */
+.lid.one {
+  border-top: 100px solid #658ced;
+  transform: rotateX(0deg);
+  z-index: 3;
+  transition-delay: 0.75s;
+}
+
+/* Lid when opened */
+.lid.two {
+  border-top: 100px solid #3760C9;
+  transform: rotateX(90deg);
+  z-index: 1;
+  transition-delay: 0.5s;
+}
+
+.envelope {
+  position: static;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-top: 100px solid transparent;
+  border-right: 150px solid #C4DFF0;
+  border-bottom: 100px solid #C4DFF0;
+  border-left: 150px solid #a4d4f2;
+  z-index: 3;
+}
+
+.letter {
+  position: absolute;
+  top: 0;
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  border-radius: 15px;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+.letter p {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 30px;
+  color: #3B4049;
+}
+
+.wrapper:hover .lid.one {
+    transform: rotateX(90deg);
+    transition-delay: 0s;
+}
+
+.wrapper:hover .lid.two {
+    transform: rotateX(180deg);
+    transition-delay: 0.25s;
+}
+
+.wrapper:hover .letter {
+  transform: translateY(-50px);
+  transition-delay: 0.5s;
+}
+
+.styled-image1 {
+  margin-top: 580px; /* Moves the h1 down by 50px */
+    margin-left: 20px; /* Moves the h1 20px to the right */
+    position: absolute;
+    display: bottom;
+    justify-content: bottom;
+    align-items: normal;
+  
+  width: 150px;             /* Resize the image */
+  height: auto;             /* Maintain aspect ratio */
+  border-radius: 15px;      /* Rounded corners */
+  border: 5px solid #555;   /* Add a border */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); /* Add shadow */
+  transition: transform 0.3s;  /* Smooth transition for hover effect */
+}
+
+/* Hover effect */
+.styled-image1:hover {
+  transform: scale(1.1);    /* Slight zoom on hover */
+  /* Glowing effect on hover */
+             }
+
+.styled-image2 {
+  
+  margin-top: 50px; 
+    margin-left: -600px; 
+    position: absolute;
+    display: bottom;
+    justify-content: bottom;
+    align-items: bottom center;
+  
+  width: 200px;             
+  height: auto;             
+  border-radius: 15px;      
+  border: 5px solid #555;   
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); 
+  transition: transform 0.3s;  /* Smooth transition for hover effect */
+}
+            
+
+.styled-image2:hover {
+  transform: scale(1.1);    /* Slight zoom on hover */
+/* Glowing effect on hover */
+}
+
+.styled-image3 {
+  
+  margin-top: 50px; 
+    margin-left: 600px; 
+    position: absolute;
+    display: inside;
+    justify-content: bottom;
+    align-items: bottom center;
+  
+  width: 200px;             
+  height: auto;             
+  border-radius: 15px;      
+  border: 5px solid #555;   
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); Add shadow 
+  transition: transform 0.3s;   Smooth transition for hover effect */
+}
+                        
+
+.styled-image3:hover {
+  transform: scale(1.1);    
+ Glowing effect on hover */
+}
+
+.styled-image4 {
+  
+  margin-top: 600px; 
+    margin-left: -600px; 
+    position: absolute;
+    display: inside;
+    justify-content: bottom;
+    align-items: bottom center;
+  
+  width: 200px;             
+  height: auto;             
+  border-radius: 15px;      
+  border: 5px solid #555;   
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); Add shadow 
+  transition: transform 0.3s;   Smooth transition for hover effect */
+}
+                        
+
+.styled-image4:hover {
+  transform: scale(1.1);    
+ Glowing effect on hover */
+}
+
+.styled-image5 {
+  
+  margin-top: 790px; 
+    margin-left: 600px; 
+    position: absolute;
+    display: inside;
+    justify-content: bottom;
+    align-items: bottom center;
+  
+  width: 170px;             
+  height: auto;             
+  border-radius: 15px;      
+  border: 5px solid #555;   
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); Add shadow 
+  transition: transform 0.3s;   Smooth transition for hover effect */
+}
+                        
+
+.styled-image5:hover {
+  transform: scale(1.1);    
+ Glowing effect on hover */
+}
+
+.styled-image6 {
+  
+  margin-top: 1100px; 
+    margin-left: -600px; 
+    position: absolute;
+    display: inside;
+    justify-content: bottom;
+    align-items: bottom center;
+  
+  width: 200px;             
+  height: auto;             
+  border-radius: 15px;      
+  border: 5px solid #555;   
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); Add shadow 
+  transition: transform 0.3s;   Smooth transition for hover effect */
+}
+                        
+
+.styled-image6:hover {
+  transform: scale(1.1);    
+ Glowing effect on hover */
+}
+
+.styled-image7 {
+  margin-top: 1150px; /* Moves the h1 down by 50px */
+    margin-left: 20px; /* Moves the h1 20px to the right */
+    position: absolute;
+    display: bottom;
+    justify-content: bottom;
+    align-items: normal;
+  
+  width: 150px;             /* Resize the image */
+  height: auto;             /* Maintain aspect ratio */
+  border-radius: 15px;      /* Rounded corners */
+  border: 5px solid #555;   /* Add a border */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); /* Add shadow */
+  transition: transform 0.3s;  /* Smooth transition for hover effect */
+}
+
+/* Hover effect */
+.styled-image7:hover {
+  transform: scale(1.1);    /* Slight zoom on hover */
+  /* Glowing effect on hover */
+}
+
+.styled-image8 {
+  
+  margin-top: 1430px; 
+    margin-left: 600px; 
+    position: absolute;
+    display: inside;
+    justify-content: bottom;
+    align-items: bottom center;
+  
+  width: 170px;             
+  height: auto;             
+  border-radius: 15px;      
+  border: 5px solid #555;   
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); Add shadow 
+  transition: transform 0.3s;   Smooth transition for hover effect */
+}
+                        
+
+.styled-image8:hover {
+  transform: scale(1.1);    
+ Glowing effect on hover */
+}
